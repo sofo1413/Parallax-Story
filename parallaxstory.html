@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>parallax</title>
+	<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+<!-- 	<link rel="stylesheet" href="css/parallax.css" type="text/css">
+ -->	<style>
+	body {
+		background-color: lightgray;
+	}
+	.parallax {
+		perspective: 25px;
+    	height: 100vh;
+    	overflow-x: hidden;
+    	overflow-y: auto;
+	}
+	.parallax-layer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 100vh 0; /*add some padding to force scrollbars*/
+	}
+	.parallax-fore1 {
+    transform: translateZ(-8px) translateX(5px) scale(1.32);
+    z-index: 10;
+}
+.parallax-back1 {
+    transform: translateZ(-50px) scale(3);
+	z-index: 5;
+}
+.parallax-fore2 {
+    transform: translateZ(0px) translateX(8px) scale(.13);
+    z-index: 10;
+}
+.parallax-back2 {
+    transform: translateZ(-170px) scale(1);
+    z-index: 5;
+}
+.parallax-fore3 {
+    transform: translateZ(0px) translateX(8px) scale(.13);
+    z-index: 10;
+}
+.parallax-back3 {
+    transform: translateZ(-170px) scale(1);
+    z-index: 5;
+}
+#group1 {
+	z-index: 8;
+}
+#group2 {
+	z-index: 6;
+}
+#group3 {
+	z-index: 7;
+}
+.fullwidth {
+	width: 96%;
+	padding: 2%;
+	margin: 2%;
+	box-sizing:border-box;
+	display: inline-block;
+}
+.fullwidthnopad {
+	width: 99%;
+	box-sizing:border-box;
+	display: inline-block;
+}
+.container {
+	display: flex;
+}
+.group {
+    position: relative;
+    padding: 25vh 10%;
+    min-height: 100vh;
+    width: 100vw;
+    transform-style: inherit;
+    background: 50% 50% / cover;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+/*	h2 {
+		font-size: 2em;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-family: 'Major Mono Display', monospace;
+
+	}*/
+</style>
+</head>
+	<body>
+		<div class="container">
+			<section class="fullwidth">
+		<h1>
+			Soph's Aventures Abroad!
+		</h1>
+		<p>
+			Once upon a time, a girl named Sophie decided to study abroad, spending six weeks in <strong>Berlin,</strong> and six in <strong>London.</strong>
+		</p>
+		<p>
+			She took the freakin' world by storm, and WE get to follow her favorite adventures!
+		</p>
+		<h2>Aventure 1: the BIGGEST Pumpkin Festival in the World</h2>
+		<p>
+			In October, Sophie travelled down to <strong>Ludwigsburg, Germany</strong>
+		</p>
+	</section>
+	<section class="fullwidthnopad">
+		<div class="parallax">
+<!-- 			<section id="group1" class="group fullwidth">
+				<div class="parallax-layer parallax-fore1">
+					<img src="img/pumpkinPileForeground.png">
+				</div>
+				<div class="parallax-layer parallax-back1">
+					<img src="img/pumpkinPileBack.png">
+				</div>
+			</section>
+
+			<section id="group2" class="group fullwidth">
+				<div class="parallax-layer parallax-fore2">
+					<img src="img/pumpkinsFore.png">
+				</div>
+				<div class="parallax-layer parallax-back2">
+					<img src="img/pumpkinsback.png">
+				</div>
+			</section>
+
+			<section id="group3" class="group fullwidth">
+				<div class="parallax-layer parallax-fore3">
+					<img src="img/boatfore.png">
+				</div>
+				<div class="parallax-layer parallax-back3">
+					<img src="img/boatback.png">
+				</div>
+			</section> -->
+			<section id="group1" class="group fullwidth">
+				<div class="parallax-layer parallax-fore1"></div>
+			</section>
+		</div>
+	</section>
+	</div>
+	</body>
+</html>

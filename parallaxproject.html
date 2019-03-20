@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>parallax advanced demo</title>
+	<link href="css/main.css" rel="stylesheet">
+
+	<style>
+	/*universal styles*/
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+}
+
+.parallaxLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.group {
+  position: relative;
+  padding: 25vh 10%;
+  min-height: 100vh;
+  width: 100vw;
+  transform-style: inherit;
+  background: 50% 50% / cover;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+/*used from the advanced demo*/
+
+.group:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: 50% 50% / cover;
+}
+/*used from the advanced demo*/
+
+#group1 {
+  z-index: 8;
+}
+
+#group1 .base {
+  /*background: #644965;*/
+  background: url('img/sophieabroad.png') 50% 50% no-repeat;
+  background-size: cover;
+}
+
+/* slide under groups 1 and 3 */
+#group2 {
+  z-index: 6;
+}
+
+#group2 .base {
+  background: url('img/pumpkinPileBack.png') 50% 50% no-repeat;
+  background-size: cover;
+}
+
+#group3 {
+  z-index: 7; 
+}
+
+#group3 .base {
+  background: url('img/pumpkinsback.png') 50% 50% no-repeat;
+  background-size: cover;
+}
+
+#group4 {
+  z-index: 7; 
+}
+
+#group4 .base {
+  background: url('img/donutback.png') 50% 50% no-repeat;
+  background-size: cover;
+}
+
+#group41 {
+  z-index: 7; 
+}
+
+#group41 .base {
+  background: url('img/boatback.png') 50% 50% no-repeat;
+  background-size: cover;
+}
+
+#group5 {
+  z-index: 7; 
+}
+
+#group5 .base {
+  background: url('img/pragueback.png') 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.title {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background: rgba(192, 64, 64, 0.5);
+  border-radius: 10px;
+}
+
+h1 {
+  color: white;
+  font-size: 80px;
+  font-family: serif;
+  text-align: center;
+  position: absolute;
+  z-index: 999;
+}
+
+p {
+  font-size: 20px;
+  color: white;
+  font-family: sans-serif;
+  line-height: 40px;
+  padding: 20px;
+  width: 70%;
+  left: 4%;
+  bottom: 50%;
+  background: rgba(0, 10, 10, 0.4);
+  border-radius: 25px;
+  transform: translateZ(100px) scale(0.6);
+  position: absolute;
+  z-index: 999;
+}
+
+#figure2 {
+    width: 100%;
+    left: 40%;
+    bottom: 10%;
+    transform: translateZ(140px) scale(1.5);
+    position: absolute;
+    z-index: 50;
+}
+
+#figure3 {
+    width: 100%;
+    left: 0%;
+    bottom: 15%;
+    transform: translateZ(200px) scale(0.38);
+    position: absolute;
+    z-index: 50;
+}
+
+#figure4 {
+    width: 100%;
+    left: -5%;
+    bottom: -72%;
+    transform: translateZ(180px) scale(0.16);
+    position: absolute;
+    z-index: 50;
+}
+
+#figure5 {
+    width: 100%;
+    left: 0%;
+    bottom: 0%;
+    transform: translateZ(200px) scale(0.3);
+    position: absolute;
+    z-index: 50;
+}
+
+#figure41 {
+    width: 100%;
+    left: 0%;
+    bottom: 0%;
+    transform: translateZ(200px) scale(0.2);
+    position: absolute;
+    z-index: 50;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  border-radius: 50px;
+}
+
+header img {
+  width: 100%;
+  max-width: none;
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+</style>
+</head>
+
+<body>
+
+  <main class="parallax">
+	    <section id="group1" class="group">	
+	      <div class="parallaxLayer base">
+	      <header>
+	      	<h1 class="title">Soph's Adventures Abroad!</h1>
+	      </header>
+	  	  </div>
+	    </section>
+
+	      <section id="group2" class="group">
+	      <div class="parallaxLayer base"></div>
+	      <figure id="figure2">
+			<img src="img/pumpkinPileForeground.png">
+	      </figure>
+	      <p>The BIGGEST pumpkin festival in the world in Ludwigsburg, Germany. The entire town is filled with different colors and shapes of pumpkins, sculptures made of pumpkins, and endless pumpkin cuisine.  Quite the dream.</p>
+	    </section>
+
+		<section id="group3" class="group">
+	      <div class="parallaxLayer base"></div>
+	      <p>Sophie flew to Southern Germany and met with her best friend from high school to eat non-stop pumpkin for three days. The weekend was quite literally out of a fairytale and the town had all of the Grimm fairy tale stories scattered throughout the small town.</p>
+	      	<figure id="figure3">
+			<img src="img/pumpkinsFore.png">
+	        </figure>
+	    </section>
+	    <section id="group4" class="group">
+	      <div class="parallaxLayer base"></div>
+	      <p>She also travelled to Amsterdam where she drank dreamy milkshakes stacked high to the brim with the sweetest things known to mankind.  From donuts to gummies to sprinkles and chocolate, the happiness was neverending.</p>
+	      	<figure id="figure4">
+			<img src="img/donutfore.png">
+	        </figure>
+	    </section>
+	    <section id="group41" class="group">
+	      <div class="parallaxLayer base"></div>
+	      <p>She cruised through the glimmering canals of Amsterdam, walked 15 miles per day, and still managed to have nothing less than a smile spanning from ear to ear.</p>
+	      	<figure id="figure41">
+			<img src="img/boatfore.png">
+	        </figure>
+	    </section>
+	    <section id="group5" class="group">
+	      <div class="parallaxLayer base"></div>
+	      <p>She went to Prague and saw neverending historic sites with two of her best friends. From pub crawls to exploring castles and eating perogis, the bliss was real despite two full days of rain.</p>
+	      	<figure id="figure5">
+			<img src="img/sophiepraguefore.png">
+	        </figure>
+	    </section>
+  </main>    
+</body>
+</html>

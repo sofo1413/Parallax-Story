@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>parallax</title>
+	<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+<!-- 	<link rel="stylesheet" href="css/parallax.css" type="text/css">
+ -->	<style>
+ html {
+ 	height: 100%;
+ 	overflow: hidden;
+ }
+	body {
+		background-color: lightgray;
+	}
+*/	header {
+		  overflow: hidden;
+		  padding-bottom: 55%;
+		}
+	.parallax {
+		perspective: 300px;
+		-webkit-perspective: 300px;
+    	height: 100vh;
+    	overflow-x: hidden;
+    	overflow-y: auto;
+	}
+	.parallax-layer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 100vh 0; /*add some padding to force scrollbars*/
+	}
+	#group1 .base {
+/*		background-size: cover;
+*/		background: url(img/sophieabroad.png) no-repeat;
+		width: 20%
+	}
+	#group2 .base {
+		background-size: cover;
+		background: url(img/pumpkinPileBack.png) no-repeat;
+	}
+	#group2 .fore {
+		background-size: cover;
+		background: url(img/pumpkinPileForeground.png)  no-repeat;
+		width: 100%
+	}
+	.base {
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0) scale(1);
+		z-index: 15;
+	}
+	.fore {
+		transform: translateZ(6px) scale(1.1);
+   		z-index: 20;
+	}
+	*, *:before, *:after {
+		margin: 0;
+	    padding: 0;
+	    box-sizing: border-box;
+	}
+	div {
+		display: block;
+	}
+	#group1 {
+		z-index: 8;
+	}
+	#group2 {
+		z-index: 6;
+	}
+	.group {
+		position: relative;
+	    padding: 25vh 10%;
+	    min-height: 100vh;
+	    width: 100vw;
+	    transform-style: inherit;
+/*	    background: 50% 50% / cover;
+*/	    transition: transform 0.5s;
+	}
+	.group:before {
+	    content: " ";
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    background: 50% 50% / cover;
+	}
+
+	.parallax-fore1 {
+    transform: translateZ(-8px) translateX(5px) scale(1.32);
+    z-index: 10;
+}
+	.parallax-back1 {
+	    transform: translateZ(-50px) scale(3);
+		z-index: 5;
+	}
+
+.parallax-fore2 {
+    transform: translateZ(0px) translateX(8px) scale(.13);
+    z-index: 10;
+}
+.parallax-back2 {
+    transform: translateZ(-170px) scale(1);
+    z-index: 5;
+}
+.parallax-fore3 {
+    transform: translateZ(0px) translateX(8px) scale(.13);
+    z-index: 10;
+}
+.parallax-back3 {
+    transform: translateZ(-170px) scale(1);
+    z-index: 5;
+}
+
+.halfwidth {
+	display: inline-block;
+	margin:2%;
+	width: 46%;
+	box-sizing:border-box;
+}
+#container {
+	display: flex;
+}
+/*	h2 {
+		font-size: 2em;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-family: 'Major Mono Display', monospace;
+
+	}*/
+</style>
+</head>
+	<body>
+		<!-- <h1>
+			Soph's Aventures Abroad!
+		</h1>
+		<p>
+			Once upon a time, a girl named Sophie decided to study abroad, spending six weeks in <strong>Berlin,</strong> and six in <strong>London.</strong>
+		</p>
+		<p>
+			She took the freakin' world by storm, and WE get to follow her favorite adventures!
+		</p>
+		<h2>Aventure 1: the BIGGEST Pumpkin Festival in the World</h2>
+		<p>
+			In October, Sophie travelled down to <strong>Ludwigsburg, Germany</strong>
+		</p> -->
+		<div id="container">
+		<section class="halfwidth">
+			<h1>
+			Soph's Aventures Abroad!
+		</h1>
+		<p>
+			Once upon a time, a girl named Sophie decided to study abroad, spending six weeks in <strong>Berlin,</strong> and six in <strong>London.</strong>
+		</p>
+		<p>
+			She took the freakin' world by storm, and WE get to follow her favorite adventures!
+		</p>
+		<h2>Aventure 1: the BIGGEST Pumpkin Festival in the World</h2>
+		<p>
+			In October, Sophie travelled down to <strong>Ludwigsburg, Germany</strong>
+		</p>
+		</section>
+		<section class="halfwidth">
+		<div class="parallax">
+			<section id="group1" class="group">
+				<div class="parallax-layer base">
+					<header>
+						<h1>
+							Soph's Adventures Abroad!
+						</h1>
+					</header>
+				</div>
+			</section>
+			<section id="group2" class="group">
+				<div class="parallax-layer base">
+				</div>
+				<div class="parallax-layer fore">
+				</div>
+			</section>
+			<section id="group3" class="group">
+				<div class="parallax-layer base">
+				</div>
+				<div class="parallax-layer fore">
+				</div>
+			</section>
+			<section id="group4" class="group">
+				<div class="parallax-layer base">
+				</div>
+				<div class="parallax-layer fore">
+				</div>
+			</section>
+		</div>
+			</section>
+		</div>
+			
+		<!-- <section class="parallax-layer parallax-fore1">
+			<img src="img/pumpkinPileForeground.png">
+		</section>
+		<section class="parallax-layer parallax-back1">
+			<img src="img/pumpkinPileBack.png">
+			background
+		</section>
+		<section class="parallax-layer parallax-fore2">
+			<img src="img/pumpkinsFore.png">
+		</section>
+		<section class="parallax-layer parallax-back2">
+			<img src="img/pumpkinsback.png">
+			background
+		</section>
+		<section class="parallax-layer parallax-fore3">
+			<img src="img/boatfore.png">
+		</section>
+		<section class="parallax-layer parallax-back3">
+			<img src="img/boatback.png">
+			background
+		</section> -->
+		</div>
+	</body>
+</html>
